@@ -6,7 +6,16 @@
     <title>Kevin's Blog</title>
 </head>
 <body>
-    <p>Hi There!</p>
-    <p>It works!</p>
+    <header>
+        <h1>Django Girls Blog</h1>
+    </header>
+    
+    {% for post in posts%}
+        <article>            
+            <h2><a href="#">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <time>published:  {{ post.published_date }}</time>
+        </article>
+    {% endfor %}
 </body>
 </html>
